@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- reset CSS to crossover browsers-->
+    <link rel="stylesheet" href="reset.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+    
+
+    <title></title>
+</head>
+
+<body>
+    <div class=container>
+        <div class="jumbotron" style="background-color: #20315A ; color: white;">
+            <h1 class="text-center">
+                <strong>
+                    <i class="fa  fa-list-alt"></i>
+                    Train Scheduler
+                </strong>
+            </h1>
+            <h3 class="text-center">Arrival and Departure Data</h3>
+        </div>
+
+        <div class="card bg-light mb-3">
+            <h4 class="card-header" style="background-color: #20315A ; color: white;"><i class="fa  fa-table">
+                    Current
+                    Train Schedule </i></h4>
+            <!-- <div class="card-header">Top Articles</div> -->
+            <div class="card-body" id="well-section">
+                <table class="table">
+                    <caption>Current Train Schedule</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col font-weight-bold ">Train Name</th>
+                            <th scope="col font-weight-bold">Destination</th>
+                            <th scope="col font-weight-bold"> Frequency (min)</th>
+                            <th scope="col font-weight-bold"> Next Arrival</th>
+                            <th scope="col font-weight-bold"> Minutes Away</th>
+                          
+                        </tr>
+                    </thead>
+                    <tbody class="results">
+
+
+
+                    </tbody>
+                </table>
+
+
+
+
+            </div>
+
+        </div>
+
+        <div class="card bg-light mb-3">
+
+
+
+            <h4 class="card-header" style="background-color: #20315A ; color: white;"><i class="fa  fa-list-alt">
+                    Add Train </i></h4>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="trainName">Tain Name</label>
+                        <input type="text" class="form-control" id="trainName">
+                    </div>
+                    <div class="form-group">
+                        <label for="trainDestination">Train Destination</label>
+                        <input type="text" class="form-control" id="trainDestination">
+                    </div>
+                    <div class="form-group">
+                        <label for="trainTime">First Train Time (HH:mm-military Time) :</label>
+                        <input type="time" class="form-control" id="trainTime">
+                    </div>
+                    <div class="form-group">
+                        <label for="frequency">Frequency (min):</label>
+                        <input type="text" class="form-control" id="frequency">
+                    </div>
+
+                    <button type="button" class="btn btn-dark" id="run-submit"><i class="fa  fa-search"> Submit</i></button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <div class="card-footer bg-transparent border-light text-center"></div>
+
+
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+        <!-- Added link to the jQuery Library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+        <!-- Link to Moment.js should go here -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+
+        <!-- Data table
+    <script src="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>-->
+
+        <!-- My JavaScript -->
+        <script src="assets/javascript/script2.js"></script>
+
+</body>
+
+</html>
